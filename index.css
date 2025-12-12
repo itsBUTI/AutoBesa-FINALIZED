@@ -1,0 +1,365 @@
+﻿:root{
+  --primary: #0d47a1;
+  --primary-dark: #08306b;
+  --accent: #66ccff;
+  --bg: rgba(249, 249, 249, 1);
+  --text: #333;
+  --max-width: 1200px;
+}
+
+/* Global container to center content and provide consistent padding */
+.container{
+  width: 90%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  background: linear-gradient(90deg, #061126 0%, #002b55 52%, #061126 100%);
+  padding: 10px 22px;
+  box-shadow: 0 6px 24px rgba(6,17,38,0.55);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  position:sticky;
+  top:0;
+  z-index:1200;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  height: 70px;
+}
+
+/* Navbar icon buttons (favorites & cart) */
+.nav-icons{ display:flex; gap:8px; align-items:center; }
+.icon-btn{ position:relative; background:transparent; border:none; color:#e8eef6; font-size:1.25rem; padding:6px; cursor:pointer; }
+.icon-btn:focus{ outline:2px solid rgba(102,204,255,0.25); border-radius:6px; }
+.icon-bubble{ position:absolute; top:-6px; right:-6px; background:#ff3b30; color:#fff; font-size:0.65rem; padding:2px 6px; border-radius:999px; min-width:18px; text-align:center; }
+
+/* Small utility for panels/modals used site-wide */
+.panel, .cart-modal, .quickview-modal{ transition: opacity 0.18s ease, visibility 0.18s ease; }
+
+
+/* logo controlled by .nav-logo for consistency */
+.nav-logo {
+  height: 64px; /* increased per request for a slightly larger logo */
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
+}
+.nav-logo:hover{ transform: translateY(-2px) scale(1.02); }
+
+/* Nav list - expects a horizontal list; wraps on smaller screens */
+.nav{ display:flex; gap:10px; align-items:center; }
+.nav-link{
+  color: rgba(232,238,246,0.95);
+  font-size:0.98rem;
+  padding:8px 12px;
+  border-radius:8px;
+  transition: background .12s ease, color .12s ease, transform .12s ease;
+  position:relative;
+}
+.nav-link:hover{ background: rgba(255,255,255,0.03); color:var(--accent); transform:translateY(-1px); }
+.nav-link.active{ color:var(--accent); font-weight:700; }
+.nav-link:focus{ outline:2px solid rgba(102,204,255,0.12); outline-offset:2px; }
+.nav-link::after{ content:''; position:absolute; left:12px; bottom:6px; width:0; height:2px; background:var(--accent); transition:width .18s ease; }
+.nav-link:hover::after{ width:calc(100% - 24px); }
+
+.navbar-toggler{ border: none; background: transparent; color: #fff; }
+.navbar-collapse{ width: 100%; }
+
+/* ================= HERO ================= */
+/* .hero-autobesa {
+  background: var(--primary) url('contact-hero.jpg') center/cover no-repeat;
+  color: white;
+  padding: 8vh 4%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  box-sizing: border-box;
+} */
+.hero-autobesa .container{ padding-top: 8vh; padding-bottom: 8vh; }
+.hero-autobesa h1{ font-size: clamp(1.6rem, 3.5vw, 3rem); margin: 0 0 0.6rem; }
+.hero-autobesa p{ font-size: clamp(1rem, 2.2vw, 1.25rem); margin-bottom: 1rem; }
+
+/* ================= BUTTONS ================= */
+.btn-autobesa, .btn-outline-autobesa, .btn-light-autobesa {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-weight: 700;
+}
+.btn-autobesa{ background: var(--primary); color:#fff; }
+.btn-autobesa:hover{ background: var(--primary-dark); }
+.btn-outline-autobesa{ border: 2px solid var(--primary); color:var(--primary); background: transparent; }
+.btn-outline-autobesa:hover{ background: var(--primary); color:#fff; }
+.btn-light-autobesa{ background:#fff; color:var(--primary); }
+.btn-light-autobesa:hover{ background:#f2f2f2; }
+
+/* make buttons stack nicely on small screens */
+.btn-group{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+
+/* ================= VEHICLES ================= */
+.vehicles-autobesa{ padding: 6vh 4%; text-align:center; background: #fff; }
+.vehicles-autobesa h2{ margin-bottom: 1.5rem; color: var(--primary); }
+.vehicles-autobesa .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; align-items:start; }
+
+.vehicles-autobesa .card{ background:#fff; border:1px solid #e6e6e6; padding:12px; border-radius:8px; transition: transform .25s ease, box-shadow .25s ease; width:100%; box-sizing:border-box; }
+.vehicles-autobesa .card:hover{ transform: translateY(-6px); box-shadow: 0 8px 20px rgba(15,23,42,0.08); }
+.vehicles-autobesa .card img{ width:100%; height:180px; object-fit:cover; border-radius:6px; margin-bottom:10px; }
+.vehicles-autobesa .card h5{ color:var(--primary); margin:6px 0; font-size:1.05rem; }
+
+/* ================= WHY CHOOSE US ================= */
+.why-autobesa{ background: var(--bg); padding: 6vh 4%; text-align:center; }
+.why-autobesa h2{ margin-bottom:1.5rem; color:var(--primary); }
+.why-autobesa .grid-4{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:20px; }
+.why-autobesa .feature-card{ background:#fff; padding:20px; border-radius:10px; border:1px solid #e6e6e6; transition: transform .22s ease, box-shadow .22s ease; }
+.why-autobesa .feature-card:hover{ transform: translateY(-6px); box-shadow: 0 10px 24px rgba(15,23,42,0.06); }
+.why-autobesa .feature-card i{ font-size:2.6rem; color:var(--primary); margin-bottom:12px; display:block; }
+.why-autobesa .feature-card h3{ font-size:1.05rem; color:var(--primary); margin-bottom:8px; }
+.why-autobesa .feature-card p{ color:#4a4a4a; font-size:0.95rem; }
+
+/* ================= ABOUT ================= */
+.about-autobesa{ padding: 6vh 4%; text-align:center; }
+.about-autobesa h2{ margin-bottom:0.75rem; color:var(--primary); }
+.about-autobesa p{ margin:0.5rem auto; max-width:900px; font-size:1rem; color:var(--text); }
+
+/* ================= CTA ================= */
+.cta-autobesa{ background: url(cta-background.png) center/cover no-repeat; color:#fff; padding:6vh 4%; text-align:center; min-height:60vh; display:flex; align-items:center; }
+.cta-autobesa h2{ margin-bottom:1rem; font-size: clamp(1.1rem, 2.8vw, 1.9rem); }
+.cta-autobesa a:hover{ background: var(--primary); color:#fff; box-shadow: 0 0 15px rgba(102,204,255,0.45); transform: translateY(-3px); }
+
+/* ================= CONTACT ================= */
+.contact-autobesa{ padding:6vh 4%; text-align:center; }
+.contact-autobesa h2{ margin-bottom:1rem; color:var(--primary); }
+.contact-autobesa p{ margin-bottom:0.6rem; font-size:1rem; }
+.contact-autobesa .map iframe{ width:100%; height:320px; border:none; border-radius:8px; }
+
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+@media (max-width: 1200px){
+  .nav-logo{ height:52px; }
+}
+@media (max-width: 992px){
+  .nav{ gap:6px; }
+  .nav-logo{ height:48px; }
+  .icon-btn{ width:38px; height:38px; }
+  .vehicles-autobesa .card img{ height:160px; }
+  .contact-autobesa .map iframe{ height:280px; }
+}
+@media (max-width: 768px){
+  .navbar{ padding:8px 14px; }
+  .nav-logo{ height:44px; }
+  .nav-link{ padding:8px 10px; font-size:0.95rem; }
+  .icon-btn{ width:36px; height:36px; }
+  .vehicles-autobesa .card img{ height:160px; }
+  .cta-autobesa{ min-height:45vh; padding:4vh 4%; }
+}
+@media (max-width: 576px){
+  .nav-logo{ height:40px; }
+  .nav{ justify-content:center; }
+  .icon-bubble{ top:-4px; right:-4px; font-size:0.6rem; padding:2px 6px; }
+  .nav-link{ padding:8px 6px; font-size:0.92rem; }
+  .vehicles-autobesa .card img{ height:140px; }
+  .contact-autobesa .map iframe{ height:220px; }
+  .btn-autobesa, .btn-outline-autobesa, .btn-light-autobesa{ padding:8px 14px; font-size:0.95rem; }
+}
+
+/* ================= ENHANCED NAVBAR STYLING ================= */
+
+/* Navbar Brand Enhancement */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff !important;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 12px rgba(102, 204, 255, 0.5);
+}
+
+/* Enhanced Navigation Links */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover i {
+  transform: translateX(2px) rotate(5deg);
+}
+
+/* Active Link Styling */
+.nav-link.active {
+  background: rgba(102, 204, 255, 0.15);
+  box-shadow: inset 0 0 10px rgba(102, 204, 255, 0.2);
+}
+
+.nav-link.active::after {
+  width: calc(100% - 24px) !important;
+}
+
+/* Icon Button Enhancements */
+.icon-btn {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background: rgba(102, 204, 255, 0.2);
+  color: var(--accent);
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 204, 255, 0.3);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* Badge Counter Animation */
+.icon-bubble {
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.icon-btn:hover .icon-bubble {
+  animation: bounce-badge 0.6s ease-in-out;
+}
+
+@keyframes bounce-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+  border-color: rgba(102, 204, 255, 0.5);
+  box-shadow: 0 0 12px rgba(102, 204, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  transform: rotate(90deg);
+}
+
+/* Search Input Enhancement */
+#navSearch .form-control {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+#navSearch .form-control:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 12px rgba(102, 204, 255, 0.4);
+}
+
+#navSearch .form-control::placeholder {
+  color: rgba(51, 51, 51, 0.6);
+}
+
+/* Navbar Collapse Animation */
+.collapse {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.navbar-collapse {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Link item hover effect with smooth underline */
+.nav-link::after {
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Sticky navbar shadow on scroll */
+.navbar.scrolled {
+  box-shadow: 0 10px 30px rgba(6, 17, 38, 0.8);
+}
+
+/* Mobile Navbar Responsive Adjustments */
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .nav-link {
+    padding: 10px 12px !important;
+    font-size: 0.95rem;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .nav-link:hover {
+    background: rgba(102, 204, 255, 0.2);
+    border-radius: 6px;
+  }
+  
+  .collapse {
+    background: rgba(6, 17, 38, 0.98);
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 12px;
+    backdrop-filter: blur(10px);
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    height: auto;
+    padding: 8px 12px;
+  }
+  
+  .nav-icons {
+    gap: 6px;
+  }
+  
+  .icon-btn {
+    padding: 4px;
+    font-size: 1.1rem;
+  }
+  
+  .navbar-brand span {
+    display: none !important;
+  }
+}
+
+

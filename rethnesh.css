@@ -1,0 +1,263 @@
+﻿/* ================= NAVBAR ================= */
+/* Premium Blue Gradient */
+.navbar {
+  background: linear-gradient(90deg, #0a0f1f 0%, #003366 50%, #0a0f1f 100%);
+  padding: 14px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-brand img {
+  height: 100px; /* larger logo */
+  max-height: 100%;
+  width: auto;
+  filter: drop-shadow(0 0 4px rgba(0,102,204,0.6));
+  transition: transform 0.3s ease;
+}
+.navbar-brand img:hover {
+  
+  transform: scale(1.05);
+}
+
+/* Nav Links */
+.nav-link {
+  color: #e0e0e0;
+  font-size: 16px;
+  padding: 8px 14px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background: #66ccff;
+  transition: width 0.3s ease;
+}
+.nav-link:hover {
+  color: #66ccff;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Toggler */
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 10px 20px;
+    height: 65px;
+  }
+  .navbar-brand img {
+    height: 45px;
+  }
+  .navbar-collapse {
+    margin-top: 12px;
+    border-radius: 6px;
+    background: rgba(10,15,31,0.95);
+    padding: 15px 20px;
+  }
+  .nav-link {
+    font-size: 18px;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* =================== HYRJE =================== */
+.about-intro-autobesa {
+  height: 100vh;
+  background-image: url(hero-background-rn.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+.container-hyrje h1{
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.about-intro-autobesa p {
+   font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* =================== MISIONI & VIZION =================== */
+.mission-vision-autobesa {
+  background: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+.mission-vision-autobesa .mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+}
+.mission-vision-autobesa .mv-card {
+  background: #f9f9f9;
+  padding: 30px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mission-vision-autobesa .mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.mission-vision-autobesa .mv-card i {
+  font-size: 2.5rem;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+.mission-vision-autobesa .mv-card h3 {
+  font-size: 1.3rem;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+.mission-vision-autobesa .mv-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+/* =================== PSE TÃ‹ NA ZGJIDHNI =================== */
+.why-autobesa {
+  background: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.why-autobesa .why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.why-autobesa .why-card {
+  background: #f9f9f9;
+  padding: 30px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-autobesa .why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.why-autobesa .why-card i {
+  font-size: 2.5rem;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+.why-autobesa .why-card h3 {
+  font-size: 1.2rem;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.why-autobesa .why-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+/* =================== PARTNERÃ‹T =================== */
+.partners-autobesa {
+  background: #f9f9f9;
+  text-align: center;
+}
+.partners-autobesa .partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.partners-autobesa .partners-logos img {
+  height: 120px;
+  filter: grayscale(0%);
+  transition: filter 0.3s ease;
+}
+.partners-autobesa .partners-logos img:hover {
+  filter: grayscale(0%);
+}
+
+/* =================== HISTORIA =================== */
+.history-autobesa {
+  background: #fff;
+  text-align: center;
+}
+.history-autobesa .timeline {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  max-width: 600px;
+  border-left: 3px solid #0d47a1;
+}
+.history-autobesa .timeline li {
+  position: relative;
+  padding: 20px 20px 20px 40px;
+  margin-bottom: 10px;
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+.history-autobesa .timeline li::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  background: #0d47a1;
+  border-radius: 50%;
+}
+.history-autobesa .timeline li span {
+  font-weight: bold;
+  color: #0d47a1;
+  display: block;
+  margin-bottom: 5px;
+}

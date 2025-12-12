@@ -1,0 +1,192 @@
+﻿<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoBesa</title>
+ <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Central site CSS (navbar, shared utilities) -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="contact.css">
+
+  <!-- Bootstrap Icons vetëm për ikonat -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+  
+  <!-- Navbar (centralized) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" role="navigation" aria-label="Main navigation">
+    <div class="container-fluid px-4">
+      <!-- Logo & Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="AutoBesa" class="nav-logo">
+        <span class="d-none d-md-inline">AutoBesa</span>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" aria-label="Ballina">
+              <i class="bi bi-house-door"></i> Ballina
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rethnesh.html" aria-label="Rreth Nesh">
+              <i class="bi bi-info-circle"></i> Rreth Nesh
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="makinat.html" aria-label="Makinat">
+              <i class="bi bi-car-front"></i> Makinat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html" aria-label="Kontakt">
+              <i class="bi bi-envelope"></i> Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <!-- Search Button -->
+        <button class="icon-btn btn-search" aria-label="Kërko" title="Kërko" data-bs-toggle="collapse" data-bs-target="#navSearch">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="icon-btn btn-cart" aria-label="Shporta" title="Shporta">
+          <i class="bi bi-cart"></i>
+          <span class="icon-bubble cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Dropdown -->
+    <div class="collapse" id="navSearch">
+      <div class="container-fluid px-4 py-3 bg-dark border-top border-secondary">
+        <input id="navSearchInput" class="form-control" type="search" placeholder="Kërko marka, model...">
+      </div>
+    </div>
+  </nav>
+
+ <section class="contact-hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Na kontaktoni</h1>
+      <p>Ekskluzivitet, transparencë dhe kujdes për klientin në çdo hap.</p>
+      <a href="#contact-form" class="btn-primary">Dërgo mesazh</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-info">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-box">
+        <i class="bi bi-geo-alt-fill"></i>
+        <h3>Adresa</h3>
+        <p>Rr. Xheladin Hana, Prizren, Kosovë</p>
+      </div>
+      <div class="info-box">
+        <i class="bi bi-telephone-fill"></i>
+        <h3>Telefoni</h3>
+        <p><a href="tel:+38344123456">+383 44 123 456</a></p>
+      </div>
+      <div class="info-box">
+        <i class="bi bi-envelope-fill"></i>
+        <h3>Email</h3>
+        <p><a href="mailto:info@autobesa.com">info@autobesa.com</a></p>
+      </div>
+      <div class="info-box">
+        <i class="bi bi-clock-fill"></i>
+        <h3>Orari</h3>
+        <p>E hënë – E shtunë: 09:00 – 18:00<br>E diel: Mbyllur</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-form">
+  <div class="container">
+    <h2>Dërgoni një mesazh</h2>
+    <form>
+      <input type="text" placeholder="Emri juaj" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Telefoni">
+      <textarea placeholder="Mesazhi juaj" rows="5" required></textarea>
+      <button type="submit" class="btn-primary">Dërgo</button>
+    </form>
+  </div>
+</section>
+
+<section class="contact-map">
+  <iframe src="https://www.google.com/maps/embed?pb=..." 
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+
+        <!-- Brand -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">AutoBesa</h6>
+          <p>Premium automotive dealership në Kosovë.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="text-uppercase fw-bold">Faqet</h6>
+          <p><a href="index.html" class="text-light text-decoration-none">Ballina</a></p>
+          <p><a href="rethnesh.html" class="text-light text-decoration-none">Rreth Nesh</a></p>
+          <p><a href="makinat.html" class="text-light text-decoration-none">Makinat</a></p>
+          <p><a href="contact.html" class="text-light text-decoration-none">Kontakt</a></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 mb-4">
+          <h6 class="text-uppercase fw-bold">Kontakt</h6>
+          <p><i class="bi bi-house-door-fill me-2"></i> Prizren, Kosovë</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> info@autobesa.com</p>
+          <p><i class="bi bi-phone-fill me-2"></i> +383 44 123 456</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">Na Ndiqni</h6>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-youtube"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-secondary">
+      © 2025 AutoBesa. Të gjitha të drejtat e rezervuara.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="navbar-sync.js"></script>
+  <script src="favorites.js"></script>
+
+</body>

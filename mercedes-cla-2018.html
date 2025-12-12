@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercedes CLA 2018 | AutoBesa</title>
+  <link rel="icon" href="favicon-car.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="detail-page.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" role="navigation" aria-label="Main navigation">
+    <div class="container-fluid px-4">
+      <!-- Logo & Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="AutoBesa" class="nav-logo">
+        <span class="d-none d-md-inline">AutoBesa</span>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" aria-label="Ballina">
+              <i class="bi bi-house-door"></i> Ballina
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rethnesh.html" aria-label="Rreth Nesh">
+              <i class="bi bi-info-circle"></i> Rreth Nesh
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="makinat.html" aria-label="Makinat">
+              <i class="bi bi-car-front"></i> Makinat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" aria-label="Kontakt">
+              <i class="bi bi-envelope"></i> Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <!-- Search Button -->
+        <button class="icon-btn btn-search" aria-label="Kërko" title="Kërko" data-bs-toggle="collapse" data-bs-target="#navSearch">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="icon-btn btn-cart" aria-label="Shporta" title="Shporta">
+          <i class="bi bi-cart"></i>
+          <span class="icon-bubble cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Dropdown -->
+    <div class="collapse" id="navSearch">
+      <div class="container-fluid px-4 py-3 bg-dark border-top border-secondary">
+        <input class="form-control" type="search" placeholder="Kërko makina...">
+      </div>
+    </div>
+  </nav><div class="container"><div class="slider-container"><div class="slider"><img src="mercedes-cla-2018.jpg" class="slider-image active"><img src="mercedes-cla-2018-interior.jpg" class="slider-image"><img src="mercedes-cla-2018-side.jpg" class="slider-image"><img src="mercedes-cla-2018-back.jpg" class="slider-image"><button class="slider-nav slider-prev" onclick="changeSlide(-1)"><i class="bi bi-chevron-left"></i></button><button class="slider-nav slider-next" onclick="changeSlide(1)"><i class="bi bi-chevron-right"></i></button><div class="slider-indicators"><div class="indicator active" onclick="currentSlide(1)"></div><div class="indicator" onclick="currentSlide(2)"></div><div class="indicator" onclick="currentSlide(3)"></div><div class="indicator" onclick="currentSlide(4)"></div></div></div></div><div class="car-details-header"><div><h1>Mercedes CLA 2018</h1><div class="car-price">€28,900</div></div><div class="detail-actions"><button id="btn-cart" class="btn-add-cart" onclick="addToCart()"><i class="bi bi-cart-plus"></i> Shto në shportë</button></div></div><div class="section"><h2><i class="bi bi-file-text"></i> Përshkrimi</h2><p>Mercedes CLA 2018 sedan elegant dhe aerodinamik. Motor benzinë me dizajn të modernizuar.</p></div><div class="section"><h2><i class="bi bi-gear-fill"></i> Specifikat Teknike</h2><ul class="grid"><li>Viti: 2018</li><li>Kilometrazhi: 88,000 km</li><li>Transmision: Automatik</li><li>Karburant: Benzinë</li><li>Traksion: Para</li><li>Fuqia: 156 HP</li><li>Standard emisioni: Euro 6</li><li>Ngjyra: E bardhë</li></ul></div><div class="section"><h2><i class="bi bi-tools"></i> Histori Mirëmbajtjeje</h2><ul><li>Servis i rregullt</li></ul></div><div class="section"><h2><i class="bi bi-sliders"></i> Opsione & Pajisje</h2><ul class="grid"><li>Sedilje lëkure</li><li>Navigacion COMAND</li><li>LED drita</li></ul></div><div class="actions"><a href="contact.html" class="btn btn-primary"><i class="bi bi-telephone"></i> Na Kontaktoni për Ofertë</a><a href="makinat.html" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Kthehu</a></div></div><footer class="bg-dark text-light pt-5 pb-4 mt-5"><div class="container"><div class="text-center">© 2025 AutoBesa</div></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script><script>let currentSlideIndex=1;function changeSlide(n){showSlide(currentSlideIndex+=n)}function currentSlide(n){showSlide(currentSlideIndex=n)}function showSlide(n){const slides=document.querySelectorAll('.slider-image');const indicators=document.querySelectorAll('.indicator');if(n>slides.length)currentSlideIndex=1;if(n<1)currentSlideIndex=slides.length;slides.forEach(s=>s.classList.remove('active'));indicators.forEach(i=>i.classList.remove('active'));slides[currentSlideIndex-1].classList.add('active');indicators[currentSlideIndex-1].classList.add('active')}</script><script src="favorites.js"></script><script src="detail-page.js"></script></body></html>
+

@@ -1,0 +1,225 @@
+﻿<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoBesa</title>
+ <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Central site CSS (navbar, shared utilities) -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="rethnesh.css">
+
+  <!-- Bootstrap Icons vetëm për ikonat -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar (centralized) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" role="navigation" aria-label="Main navigation">
+    <div class="container-fluid px-4">
+      <!-- Logo & Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="AutoBesa" class="nav-logo">
+        <span class="d-none d-md-inline">AutoBesa</span>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" aria-label="Ballina">
+              <i class="bi bi-house-door"></i> Ballina
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="rethnesh.html" aria-label="Rreth Nesh">
+              <i class="bi bi-info-circle"></i> Rreth Nesh
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="makinat.html" aria-label="Makinat">
+              <i class="bi bi-car-front"></i> Makinat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" aria-label="Kontakt">
+              <i class="bi bi-envelope"></i> Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <!-- Search Button -->
+        <button class="icon-btn btn-search" aria-label="Kërko" title="Kërko" data-bs-toggle="collapse" data-bs-target="#navSearch">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="icon-btn btn-cart" aria-label="Shporta" title="Shporta">
+          <i class="bi bi-cart"></i>
+          <span class="icon-bubble cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Dropdown -->
+    <div class="collapse" id="navSearch">
+      <div class="container-fluid px-4 py-3 bg-dark border-top border-secondary">
+        <input id="navSearchInput" class="form-control" type="search" placeholder="Kërko marka, model...">
+      </div>
+    </div>
+  </nav>
+
+    <!-- ================= Hyrje ================= -->
+  <section class="about-intro-autobesa">
+    <div class="hero-overlay">
+    <div class="container-hyrje" >
+      <h1>Luks që Udhëton me Ty</h1>
+      <p>Ekskluzivitet, besim dhe stil – gjithçka që kërkon në një destinacion.</p>
+    </div>
+    </div>
+  </section>
+
+  <!-- ================= Misioni & Vizion ================= -->
+<section class="mission-vision-autobesa">
+  <div class="container">
+    <h2>Misioni & Vizion</h2>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <i class="bi bi-bullseye"></i>
+        <h3>Misioni ynë</h3>
+        <p>
+          Të ofrojmë automjete premium të përzgjedhura me kujdes, duke garantuar
+          cilësi, siguri dhe një përvojë të paharrueshme për çdo klient.
+        </p>
+      </div>
+      <div class="mv-card">
+        <i class="bi bi-eye"></i>
+        <h3>Vizioni ynë</h3>
+        <p>
+          Të bëhemi lider në tregun e Kosovës për shitjen e makinave luksoze,
+          duke ndërtuar një markë që përfaqëson besim, ekskluzivitet dhe inovacion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ================= Pse të na zgjidhni ================= -->
+<section class="why-autobesa">
+  <div class="container">
+    <h2>Pse të na zgjidhni</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="bi bi-car-front"></i>
+        <h3>Makina të certifikuara</h3>
+        <p>Çdo automjet kalon inspektim të plotë teknik dhe është gati për rrugë.</p>
+      </div>
+      <div class="why-card">
+        <i class="bi bi-cash-coin"></i>
+        <h3>Çmime transparente</h3>
+        <p>Pa kosto të fshehura – gjithçka e qartë dhe e drejtë për klientin.</p>
+      </div>
+      <div class="why-card">
+        <i class="bi bi-headset"></i>
+        <h3>Mbështetje 24/7</h3>
+        <p>Stafi ynë është gjithmonë i gatshëm për t’ju ndihmuar në çdo hap.</p>
+      </div>
+      <div class="why-card">
+        <i class="bi bi-award"></i>
+        <h3>Përvojë premium</h3>
+        <p>Një eksperiencë unike blerjeje me standarde ndërkombëtare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- ================= Partnerët ================= -->
+  <section class="partners-autobesa">
+    <div class="container">
+      <h2>Partnerët tanë</h2>
+      <div class="partners-logos">
+        <img src="audi-logo.png" alt="Audi" />
+        <img src="bmw-logo.png" alt="BMW" />
+        <img src="mercedes-logo.png" alt="Mercedes-Benz" />
+        <img src="vw-logo.png" alt="Volkswagen" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Historia ================= -->
+  <section class="history-autobesa">
+    <div class="container">
+      <h2>Historia jonë</h2>
+      <ul class="timeline">
+        <li><span>2015</span> Themelimi i AutoBesa në Prizren</li>
+        <li><span>2017</span> Hapja e showroom-it të parë</li>
+        <li><span>2020</span> Partneritet me markat ndërkombëtare</li>
+        <li><span>2024</span> 1000+ makina të shitura me sukses</li>
+      </ul>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+
+        <!-- Brand -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">AutoBesa</h6>
+          <p>Premium automotive dealership në Kosovë.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="text-uppercase fw-bold">Faqet</h6>
+          <p><a href="index.html" class="text-light text-decoration-none">Ballina</a></p>
+          <p><a href="rethnesh.html" class="text-light text-decoration-none">Rreth Nesh</a></p>
+          <p><a href="makinat.html" class="text-light text-decoration-none">Makinat</a></p>
+          <p><a href="contact.html" class="text-light text-decoration-none">Kontakt</a></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 mb-4">
+          <h6 class="text-uppercase fw-bold">Kontakt</h6>
+          <p><i class="bi bi-house-door-fill me-2"></i> Prizren, Kosovë</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> info@autobesa.com</p>
+          <p><i class="bi bi-phone-fill me-2"></i> +383 44 123 456</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">Na Ndiqni</h6>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-youtube"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-secondary">
+      © 2025 AutoBesa. Të gjitha të drejtat e rezervuara.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="navbar-sync.js"></script>
+  <script src="favorites.js"></script>
+
+</body>

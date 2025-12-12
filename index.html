@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoBesa</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.1/aos.css" />
+
+  <!-- Small page-specific hero tweaks for nicer full-screen hero -->
+  <style>
+    .hero-autobesa {
+      display: flex;
+      align-items: center;
+      min-height: calc(100vh - 90px); /* leaves room for sticky nav */
+      background: url(contact-hero.jpg);
+      color: #fff;
+      padding: 3rem 0;
+      background-position: center;
+      background-size: cover;
+    }
+    .hero-autobesa .container {
+      z-index: 2;
+      text-align: center;
+    }
+    .hero-autobesa h1 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: .5rem; }
+    .hero-autobesa p { font-size: clamp(1rem, 1.6vw, 1.25rem); margin-bottom: 1.25rem; color: rgba(255,255,255,0.9);} 
+    .btn-autobesa { padding: .8rem 1.4rem; font-weight:600; }
+    @media (max-width: 576px){ .hero-autobesa { min-height: calc(70vh - 70px); padding: 2rem 0; } }
+  </style>
+
+</head>
+<body>
+
+  <!-- Navbar (centralized) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" role="navigation" aria-label="Main navigation">
+    <div class="container-fluid px-4">
+      <!-- Logo & Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="AutoBesa" class="nav-logo">
+        <span class="d-none d-md-inline">AutoBesa</span>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" aria-label="Ballina">
+              <i class="bi bi-house-door"></i> Ballina
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rethnesh.html" aria-label="Rreth Nesh">
+              <i class="bi bi-info-circle"></i> Rreth Nesh
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="makinat.html" aria-label="Makinat">
+              <i class="bi bi-car-front"></i> Makinat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" aria-label="Kontakt">
+              <i class="bi bi-envelope"></i> Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <!-- Search Button -->
+        <button class="icon-btn btn-search" aria-label="Kërko" title="Kërko" data-bs-toggle="collapse" data-bs-target="#navSearch">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="icon-btn btn-cart" aria-label="Shporta" title="Shporta">
+          <i class="bi bi-cart"></i>
+          <span class="icon-bubble cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Dropdown -->
+    <div class="collapse" id="navSearch">
+      <div class="container-fluid px-4 py-3 bg-dark border-top border-secondary">
+        <input id="navSearchInput" class="form-control" type="search" placeholder="Kërko marka, model...">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-autobesa">
+    <div class="container">
+      <h1>Ekskluziviteti në çdo detaj</h1>
+      <p>Zbuloni makinat më të mira me AutoBesa</p>
+      <a href="makinat.html" class="btn-autobesa">Shiko Makinat</a>
+    </div>
+  </section>
+
+  <!-- Vehicles -->
+  <section id="makinat" class="vehicles-autobesa">
+    <div class="container">
+      <h2>Makinat e Zgjedhura</h2>
+      <div class="grid">
+
+        <div class="card" data-aos="fade-up" data-aos-delay="50">
+          <img src="AudiQ8.png" alt="Audi Q8 2020" >
+          <h5>Audi Q8</h5>
+          <p>2020 • SUV Premium</p>
+          <a href="audi-q8-2021.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="150">
+          <img src="bmw520d.png" alt="BMW 520D">
+          <h5>BMW 520D</h5>
+          <p>2020 • Diesel Executive</p>
+          <a href="bmw-5series-2019.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="250">
+          <img src="mercedes-cls.png" alt="Mercedes CLS">
+          <h5>Mercedes CLS</h5>
+          <p>2021 • Coupé Luksoze</p>
+          <a href="mercedes-eclass-2021.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="350"> 
+          <img src="audia7.png" alt="Audi A7">
+          <h5>Audi A7</h5>
+          <p>2021 • Sportback Premium</p>
+          <a href="audi-a7-2020.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="450">
+          <img src="golf8.png" alt="Golf 8 R-Line">
+          <h5>Golf 8 R-Line</h5>
+          <p>2022 • Hatchback Sport</p>
+          <a href="vw-golf-2018.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="550">
+          <img src="mercedes500.png" alt="Mercedes S500">
+          <h5>Mercedes S500</h5>
+          <p>2022 • Flagship Luxury</p>
+          <a href="mercedes-sclass-2020.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="650">
+          <img src="tesla-model-s.png" alt="Tesla Model S">
+          <h5>Tesla Model S</h5>
+          <p>2021 • Elektrik Performance</p>
+          <a href="makinat.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="750">
+          <img src="rangerover-evoque.png" alt="Range Rover Evoque">
+          <h5>Range Rover Evoque</h5>
+          <p>2020 • SUV Premium</p>
+          <a href="makinat.html" class="btn-outline-autobesa">Shiko më shumë</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-autobesa">
+    <div class="container">
+      <h2>Pse AutoBesa</h2>
+      <div class="grid-4">
+        <div class="feature-card">
+          <i class="bi bi-shield-check"></i>
+          <h3>Besueshmëri</h3>
+          <p>Çdo makinë kalon kontrolle të rrepta teknike për siguri maksimale.</p>
+        </div>
+        <div class="feature-card">
+          <i class="bi bi-gem"></i>
+          <h3>Ekskluzivitet</h3>
+          <p>Modele të rralla dhe të përzgjedhura për klientët tanë premium.</p>
+        </div>
+        <div class="feature-card">
+          <i class="bi bi-people"></i>
+          <h3>Shërbim Premium</h3>
+          <p>Këshillim personal, asistencë 24/7 dhe përvojë unike blerjeje.</p>
+        </div>
+        <div class="feature-card">
+          <i class="bi bi-award"></i>
+          <h3>Garanci</h3>
+          <p>Garanci e plotë për çdo automjet dhe mbështetje pas shitjes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-autobesa">
+    <div class="container">
+      <h2>Rreth Nesh</h2>
+      <p>
+        AutoBesa është një markë që sjell luks, besueshmëri dhe përvojë moderne në tregun e makinave në Kosovë.
+        Ne jemi të përkushtuar të ofrojmë vetëm automjete të nivelit më të lartë, duke kombinuar cilësinë me shërbimin premium.
+      </p>
+      <p>
+        Me një ekip profesionistësh dhe një rrjet partnerësh ndërkombëtarë, AutoBesa është sinonim i ekskluzivitetit dhe besimit.
+      </p>
+      <a href="rethnesh.html" class="btn-autobesa">Lexo më shumë</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-autobesa">
+    <div class="container">
+      <h2>Gjej makinën e ëndrrave sot</h2>
+      <a href="contact.html" class="btn-light-autobesa">Na Kontaktoni</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="kontakt" class="contact-autobesa">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <p><strong>Tel:</strong> +383 44 123 456</p>
+      <p><strong>Email:</strong> info@autobesa.com</p>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Prizren&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+
+        <!-- Brand -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">AutoBesa</h6>
+          <p>Premium automotive dealership në Kosovë.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="text-uppercase fw-bold">Faqet</h6>
+          <p><a href="index.html" class="text-light text-decoration-none">Ballina</a></p>
+          <p><a href="rethnesh.html" class="text-light text-decoration-none">Rreth Nesh</a></p>
+          <p><a href="makinat.html" class="text-light text-decoration-none">Makinat</a></p>
+          <p><a href="contact.html" class="text-light text-decoration-none">Kontakt</a></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 mb-4">
+          <h6 class="text-uppercase fw-bold">Kontakt</h6>
+          <p><i class="bi bi-house-door-fill me-2"></i> Prizren, Kosovë</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> info@autobesa.com</p>
+          <p><i class="bi bi-phone-fill me-2"></i> +383 44 123 456</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">Na Ndiqni</h6>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-youtube"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-secondary">
+      © 2025 AutoBesa. Të gjitha të drejtat e rezervuara.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.1/aos.js"></script>
+  <script>
+    AOS.init({
+      easing: 'ease-in-out',
+      once: true // only animate once, not every scroll
+    });
+  </script>
+  <script src="navbar-sync.js"></script>
+  <script src="favorites.js"></script>
+</body>
+</html>

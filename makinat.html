@@ -1,0 +1,744 @@
+﻿<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoBesa</title>
+ <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Central site CSS (navbar, shared utilities) -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="makinat.css">
+
+  <!-- Bootstrap Icons vetëm për ikonat -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+   <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.1/aos.css" />
+</head>
+
+<body>
+
+  <!-- Navbar (centralized) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" role="navigation" aria-label="Main navigation">
+    <div class="container-fluid px-4">
+      <!-- Logo & Brand -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="logo.png" alt="AutoBesa" class="nav-logo">
+        <span class="d-none d-md-inline">AutoBesa</span>
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" aria-label="Ballina">
+              <i class="bi bi-house-door"></i> Ballina
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rethnesh.html" aria-label="Rreth Nesh">
+              <i class="bi bi-info-circle"></i> Rreth Nesh
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="makinat.html" aria-label="Makinat">
+              <i class="bi bi-car-front"></i> Makinat
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" aria-label="Kontakt">
+              <i class="bi bi-envelope"></i> Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class="nav-icons d-flex align-items-center gap-2 ms-3">
+        <!-- Search Button -->
+        <button class="icon-btn btn-search" aria-label="Kërko" title="Kërko" data-bs-toggle="collapse" data-bs-target="#navSearch">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="icon-btn btn-cart" aria-label="Shporta" title="Shporta">
+          <i class="bi bi-cart"></i>
+          <span class="icon-bubble cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Dropdown -->
+    <div class="collapse" id="navSearch">
+      <div class="container-fluid px-4 py-3 bg-dark border-top border-secondary">
+        <input id="navSearchInput" class="form-control" type="search" placeholder="Kërko marka, model...">
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= FILTRAT & KËRKIMI ================= -->
+  <section class="filters-section">
+    <div class="container">
+      <form id="filterForm" class="filters-grid">
+        <div class="filter-group">
+          <label for="search"><i class="bi bi-search"></i> Kërko</label>
+          <input type="text" id="search" name="search" placeholder="Model, markë, motor..." />
+        </div>
+
+        <div class="filter-group">
+          <label for="brand"><i class="bi bi-building"></i> Marka</label>
+          <select id="brand" name="brand">
+            <option value="">Të gjitha</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Porsche">Porsche</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="price"><i class="bi bi-cash-coin"></i> Çmimi max</label>
+          <input type="number" id="price" name="price" placeholder="p.sh. 35000" min="0" />
+        </div>
+
+        <div class="filter-group">
+          <label for="year"><i class="bi bi-calendar3"></i> Viti min</label>
+          <input type="number" id="year" name="year" placeholder="p.sh. 2018" min="1990" />
+        </div>
+
+        <div class="filter-group">
+          <label for="transmission"><i class="bi bi-gear"></i> Transmetimi</label>
+          <select id="transmission" name="transmission">
+            <option value="">Të gjitha</option>
+            <option value="Automatik">Automatik</option>
+            <option value="Manual">Manual</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="fuel"><i class="bi bi-fuel-pump"></i> Karburanti</label>
+          <select id="fuel" name="fuel">
+            <option value="">Të gjitha</option>
+            <option value="Benzinë">Benzinë</option>
+            <option value="Naftë">Naftë</option>
+            <option value="Hibrid">Hibrid</option>
+            <option value="Elektrik">Elektrik</option>
+          </select>
+        </div>
+
+        <div class="filters-actions">
+          <button type="submit" class="btn-primary"><i class="bi bi-funnel"></i> Apliko filtrat</button>
+          <button type="reset" class="btn-ghost"><i class="bi bi-arrow-counterclockwise"></i> Fshij</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= SORTIMI ================= -->
+  <section class="sort-section">
+    <div class="container">
+      <div class="sort-bar">
+        <div class="sort-left">
+          <span id="resultsCount">0 rezultate</span>
+        </div>
+        <div class="sort-right">
+          <label for="sort"><i class="bi bi-arrow-down-up"></i> Rendit sipas</label>
+          <select id="sort" name="sort">
+            <option value="newest">Më të rejat</option>
+            <option value="priceAsc">Çmimi: nga i ulëti</option>
+            <option value="priceDesc">Çmimi: nga i larti</option>
+            <option value="kmAsc">Kilometrazhi: më i ulët</option>
+            <option value="yearDesc">Viti: më i ri</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GRID I MAKINAVE ================= -->
+<main class="inventory-grid-section">
+  <div class="container">
+    <div id="inventoryGrid" class="inventory-grid">
+
+      <!-- 1. BMW X5 -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="150" data-brand="BMW" data-price="45900" data-year="2020" data-transmission="Automatik" data-fuel="Naftë">
+        <div class="car-image">
+          <img src="bmw-x5-2020.jpg" alt="BMW X5 2020" />
+          <span class="badge">Premium</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">BMW X5</h3>
+          <p class="car-meta">2020 • 45,000 km • Automatik • Naftë</p>
+          <span class="price">€45,900</span>
+          <div class="card-actions">
+            
+            <a href="bmw-x5-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('BMW X5', 45900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Audi A6 -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="250" data-brand="Audi" data-price="38900" data-year="2019" data-transmission="Automatik" data-fuel="Benzinë">
+        <div class="car-image">
+          <img src="audi-a6-2019.jpg" alt="Audi A6 2019" />
+          <span class="badge">i certifikuar</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Audi A6</h3>
+          <p class="car-meta">2019 • 60,000 km • Automatik • Benzinë</p>
+          <span class="price">€38,900</span>
+          <div class="card-actions">
+            
+            <a href="audi-a6-2019.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Audi A6', 38900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Mercedes E-Class -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="350" data-brand="Mercedes-Benz" data-price="52900" data-year="2021" data-transmission="Automatik" data-fuel="Naftë">
+        <div class="car-image">
+          <img src="mercedes-eclass-2021.jpg" alt="Mercedes-Benz E-Class 2021" />
+          <span class="badge">i ri</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Mercedes E-Class</h3>
+          <p class="car-meta">2021 • 30,000 km • Automatik • Naftë</p>
+          <span class="price">€52,900</span>
+          <div class="card-actions">
+            
+            <a href="mercedes-eclass-2021.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Mercedes E-Class', 52900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Volkswagen Golf -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="450" data-brand="Volkswagen" data-price="21900" data-year="2018" data-transmission="Manual" data-fuel="Naftë">
+        <div class="car-image">
+          <img src="vw-golf-2018.jpg" alt="Volkswagen Golf 2018" />
+          <span class="badge">vlerë e mirë</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Volkswagen Golf</h3>
+          <p class="car-meta">2018 • 85,000 km • Manual • Naftë</p>
+          <span class="price">€21,900</span>
+          <div class="card-actions">
+            
+            <a href="vw-golf-2018.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Volkswagen Golf', 21900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Porsche Cayenne -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="550" data-brand="Porsche" data-price="74900" data-year="2020" data-transmission="Automatik" data-fuel="Benzinë">
+        <div class="car-image">
+          <img src="porsche-cayenne-2020.jpg" alt="Porsche Cayenne 2020" />
+          <span class="badge">Ekskluzive</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Porsche Cayenne</h3>
+          <p class="car-meta">2020 • 25,000 km • Automatik • Benzinë</p>
+          <span class="price">€74,900</span>
+          <div class="card-actions">
+            
+            <a href="porsche-cayenne-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Porsche Cayenne', 74900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Audi Q7 -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="650" data-brand="Audi" data-price="55900" data-year="2021" data-transmission="Automatik" data-fuel="Naftë">
+        <div class="car-image">
+          <img src="audi-q7-2021.jpg" alt="Audi Q7 2021" />
+          <span class="badge">SUV</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Audi Q7</h3>
+          <p class="car-meta">2021 • 35,000 km • Automatik • Naftë</p>
+          <span class="price">€55,900</span>
+          <div class="card-actions">
+            
+            <a href="audi-q7-2021.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Audi Q7', 55900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. BMW 3 Series -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="750" data-brand="BMW" data-price="29900" data-year="2018" data-transmission="Manual" data-fuel="Benzinë">
+        <div class="car-image">
+          <img src="bmw-3series-2018.jpg" alt="BMW 3 Series 2018" />
+          <span class="badge">Sport</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">BMW 3 Series</h3>
+          <p class="car-meta">2018 • 75,000 km • Manual • Benzinë</p>
+          <span class="price">€29,900</span>
+          <div class="card-actions">
+            
+            <a href="bmw-3series-2018.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('BMW 3 Series', 29900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Mercedes GLC -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="850" data-brand="Mercedes-Benz" data-price="48900" data-year="2020" data-transmission="Automatik" data-fuel="Naftë">
+        <div class="car-image">
+          <img src="mercedes-glc-2020.jpg" alt="Mercedes GLC 2020" />
+          <span class="badge">SUV</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Mercedes-Benz GLC</h3>
+          <p class="car-meta">2020 • 40,000 km • Automatik • Naftë</p>
+          <span class="price">€48,900</span>
+          <div class="card-actions">
+            
+            <a href="mercedes-glc-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Mercedes GLC', 48900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. Audi A4 -->
+      <article class="car-card" data-aos="fade-up" data-aos-delay="950" data-brand="Audi" data-price="25900" data-year="2017" data-transmission="Manual" data-fuel="Benzinë">
+        <div class="car-image">
+          <img src="audi-a4-2017.jpg" alt="Audi A4 2017" />
+          <span class="badge">Sedan</span>
+        </div>
+        <div class="car-info">
+          <h3 class="car-title">Audi A4</h3>
+          <p class="car-meta">2017 • 95,000 km • Manual • Benzinë</p>
+          <span class="price">€25,900</span>
+          <div class="card-actions">
+            
+            <a href="audi-a4-2017.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+            <button class="btn-cart-add" onclick="addToCart('Audi A4', 25900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
+    
+<!-- 10. BMW 5 Series -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1050" data-brand="BMW" data-price="34900" data-year="2019" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="bmw-5series-2019.jpg" alt="BMW 5 Series 2019" />
+    <span class="badge">Business</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">BMW 5 Series</h3>
+    <p class="car-meta">2019 • 70,000 km • Automatik • Naftë</p>
+    <span class="price">€34,900</span>
+    <div class="card-actions">
+      
+      <a href="bmw-5series-2019.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('BMW 5 Series', 34900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 11. Mercedes C-Class -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1150" data-brand="Mercedes-Benz" data-price="31900" data-year="2018" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="mercedes-cclass-2018.jpg" alt="Mercedes C-Class 2018" />
+    <span class="badge">i certifikuar</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Mercedes-Benz C-Class</h3>
+    <p class="car-meta">2018 • 80,000 km • Automatik • Naftë</p>
+    <span class="price">€31,900</span>
+    <div class="card-actions">
+      
+      <a href="mercedes-cclass-2018.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Mercedes C-Class', 31900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 12. Volkswagen Passat -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1250" data-brand="Volkswagen" data-price="22900" data-year="2019" data-transmission="Manual" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="vw-passat-2019.jpg" alt="Volkswagen Passat 2019" />
+    <span class="badge">Familjar</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Volkswagen Passat</h3>
+    <p class="car-meta">2019 • 65,000 km • Manual • Naftë</p>
+    <span class="price">€22,900</span>
+    <div class="card-actions">
+      
+      <a href="vw-passat-2019.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Volkswagen Passat', 22900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 13. Porsche Macan -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1350" data-brand="Porsche" data-price="59900" data-year="2021" data-transmission="Automatik" data-fuel="Benzinë">
+  <div class="car-image">
+    <img src="porsche-macan-2021.jpg" alt="Porsche Macan 2021" />
+    <span class="badge">SUV</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Porsche Macan</h3>
+    <p class="car-meta">2021 • 20,000 km • Automatik • Benzinë</p>
+    <span class="price">€59,900</span>
+    <div class="card-actions">
+      
+      <a href="porsche-macan-2021.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Porsche Macan', 59900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 14. Audi Q5 -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1450" data-brand="Audi" data-price="41900" data-year="2020" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="audi-q5-2020.jpg" alt="Audi Q5 2020" />
+    <span class="badge">SUV</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Audi Q5</h3>
+    <p class="car-meta">2020 • 40,000 km • Automatik • Naftë</p>
+    <span class="price">€41,900</span>
+    <div class="card-actions">
+      
+      <a href="audi-q5-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Audi Q5', 41900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 15. BMW X3 -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1550" data-brand="BMW" data-price="37900" data-year="2019" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="bmw-x3-2019.jpg" alt="BMW X3 2019" />
+    <span class="badge">SUV</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">BMW X3</h3>
+    <p class="car-meta">2019 • 55,000 km • Automatik • Naftë</p>
+    <span class="price">€37,900</span>
+    <div class="card-actions">
+      
+      <a href="bmw-x3-2019.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('BMW X3', 37900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 16. Mercedes CLA -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1650" data-brand="Mercedes-Benz" data-price="28900" data-year="2018" data-transmission="Automatik" data-fuel="Benzinë">
+  <div class="car-image">
+    <img src="mercedes-cla-2018.jpg" alt="Mercedes CLA 2018" />
+    <span class="badge">Coupe</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Mercedes-Benz CLA</h3>
+    <p class="car-meta">2018 • 68,000 km • Automatik • Benzinë</p>
+    <span class="price">€28,900</span>
+    <div class="card-actions">
+      
+      <a href="mercedes-cla-2018.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Mercedes CLA', 28900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 17. Audi A7 -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1750" data-brand="Audi" data-price="44900" data-year="2020" data-transmission="Automatik" data-fuel="Benzinë">
+  <div class="car-image">
+    <img src="audi-a7-2020.jpg" alt="Audi A7 2020" />
+    <span class="badge">Sportback</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Audi A7</h3>
+    <p class="car-meta">2020 • 40,000 km • Automatik • Benzinë</p>
+    <span class="price">€44,900</span>
+    <div class="card-actions">
+      
+      <a href="audi-a7-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Audi A7', 44900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 18. BMW X6 -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1850" data-brand="BMW" data-price="62900" data-year="2021" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="bmw-x6-2021.jpg" alt="BMW X6 2021" />
+    <span class="badge">Coupe SUV</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">BMW X6</h3>
+    <p class="car-meta">2021 • 28,000 km • Automatik • Naftë</p>
+    <span class="price">€62,900</span>
+    <div class="card-actions">
+      
+      <a href="bmw-x6-2021.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('BMW X6', 62900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 19. Mercedes S-Class -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="1950" data-brand="Mercedes-Benz" data-price="89900" data-year="2020" data-transmission="Automatik" data-fuel="Benzinë">
+  <div class="car-image">
+    <img src="mercedes-sclass-2020.jpg" alt="Mercedes S-Class 2020" />
+    <span class="badge">Luks</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Mercedes-Benz S-Class</h3>
+    <p class="car-meta">2020 • 35,000 km • Automatik • Benzinë</p>
+    <span class="price">€89,900</span>
+    <div class="card-actions">
+      
+      <a href="mercedes-sclass-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Mercedes S-Class', 89900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 20. Volkswagen Tiguan -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="2050" data-brand="Volkswagen" data-price="27900" data-year="2019" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="vw-tiguan-2019.jpg" alt="Volkswagen Tiguan 2019" />
+    <span class="badge">SUV</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Volkswagen Tiguan</h3>
+    <p class="car-meta">2019 • 65,000 km • Automatik • Naftë</p>
+    <span class="price">€27,900</span>
+    <div class="card-actions">
+      
+      <a href="vw-tiguan-2019.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Volkswagen Tiguan', 27900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 21. Porsche Panamera -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="2150" data-brand="Porsche" data-price="99900" data-year="2021" data-transmission="Automatik" data-fuel="Benzinë">
+  <div class="car-image">
+    <img src="porsche-panamera-2021.jpg" alt="Porsche Panamera 2021" />
+    <span class="badge">Gran Turismo</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Porsche Panamera</h3>
+    <p class="car-meta">2021 • 18,000 km • Automatik • Benzinë</p>
+    <span class="price">€99,900</span>
+    <div class="card-actions">
+      
+      <a href="porsche-panamera-2021.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Porsche Panamera', 99900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 22. Audi Q8 -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="2250" data-brand="Audi" data-price="67900" data-year="2021" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="audi-q8-2021.jpg" alt="Audi Q8 2021" />
+    <span class="badge">SUV Coupe</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Audi Q8</h3>
+    <p class="car-meta">2021 • 22,000 km • Automatik • Naftë</p>
+    <span class="price">€67,900</span>
+    <div class="card-actions">
+      
+      <a href="audi-q8-2021.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Audi Q8', 67900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 23. BMW i8 -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="2350" data-brand="BMW" data-price="79900" data-year="2019" data-transmission="Automatik" data-fuel="Hibrid">
+  <div class="car-image">
+    <img src="bmw-i8-2019.jpg" alt="BMW i8 2019" />
+    <span class="badge">Hybrid Sport</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">BMW i8</h3>
+    <p class="car-meta">2019 • 40,000 km • Automatik • Hibrid</p>
+    <span class="price">€79,900</span>
+    <div class="card-actions">
+      
+      <a href="bmw-i8-2019.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('BMW i8', 79900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+<!-- 24. Mercedes GLE -->
+<article class="car-card" data-aos="fade-up" data-aos-delay="2450" data-brand="Mercedes-Benz" data-price="56900" data-year="2020" data-transmission="Automatik" data-fuel="Naftë">
+  <div class="car-image">
+    <img src="mercedes-gle-2020.jpg" alt="Mercedes GLE 2020" />
+    <span class="badge">SUV</span>
+  </div>
+  <div class="car-info">
+    <h3 class="car-title">Mercedes-Benz GLE</h3>
+    <p class="car-meta">2020 • 38,000 km • Automatik • Naftë</p>
+    <span class="price">€56,900</span>
+    <div class="card-actions">
+      
+      <a href="mercedes-gle-2020.html" class="btn-detajet"><i class="bi bi-eye"></i> Detajet</a>
+      <button class="btn-cart-add" onclick="addToCart('Mercedes GLE', 56900)" title="Shto në shportë"><i class="bi bi-cart-plus"></i></button>
+    </div>
+  </div>
+</article>
+
+    </div>
+
+      <!-- ================= PAGINIM ================= -->
+      <div class="pagination">
+        <button class="page-btn prev" disabled><i class="bi bi-chevron-left"></i> Mbrapa</button>
+        <div class="pages">
+          <button class="page-number active" data-page="1">1</button>
+          <button class="page-number" data-page="2">2</button>
+          <button class="page-number" data-page="3">3</button>
+        </div>
+        <button class="page-btn next">Para <i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div>
+  </main>
+  <!-- Favorites Panel -->
+  <div id="favoritesPanel" class="panel favorites-panel" aria-hidden="true">
+    <div class="panel-inner">
+      <button class="panel-close" aria-label="Mbyll">&times;</button>
+      <h3>Favoritet tuaja</h3>
+      <div class="favorites-list">
+        <!-- populated by JS -->
+      </div>
+      <div class="panel-actions">
+        <a href="#" class="btn-primary btn-view-all">Shiko të gjitha</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal" aria-hidden="true">
+    <div class="cart-content">
+      <button class="cart-close" aria-label="Mbyll">&times;</button>
+      <h3>Shporta juaj</h3>
+      <div class="cart-items">
+        <!-- JS will render items here -->
+      </div>
+      <div class="cart-summary">
+        <div class="cart-total">Totali: <span class="total-amount">€0</span></div>
+        <div class="cart-actions">
+          <button class="btn-ghost btn-clear-cart">Pastro shportën</button>
+          <a href="contact.html" class="btn-primary">Kërko ofertë</a>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- ================= outro ================= -->
+      <section class="cars-intro">
+  <div class="container">
+    <div class="intro-grid">
+      
+      <div class="intro-box">
+        <i class="bi bi-award-fill"></i>
+        <h3>Markë Premium</h3>
+        <p>AutoBesa është një nga emrat më të besueshëm në tregun e makinave në Kosovë.</p>
+      </div>
+
+      <div class="intro-box">
+        <i class="bi bi-arrow-left-right"></i>
+        <h3>Ndërrim Veture</h3>
+        <p>Ofrojmë mundësi ndërrimi të makinës suaj me modele të reja ose të përdorura.</p>
+      </div>
+
+      <div class="intro-box">
+        <i class="bi bi-credit-card-2-front-fill"></i>
+        <h3>Leasing & Financim</h3>
+        <p>Zgjidhje fleksibile financiare për çdo klient, me kushte të qarta dhe transparente.</p>
+      </div>
+
+      <div class="intro-box">
+        <i class="bi bi-shield-check"></i>
+        <h3>Garanci e Plotë</h3>
+        <p>Çdo makinë vjen me kilometrazh të garantuar dhe garanci të plotë.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+
+        <!-- Brand -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">AutoBesa</h6>
+          <p>Premium automotive dealership në Kosovë.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="text-uppercase fw-bold">Faqet</h6>
+          <p><a href="index.html" class="text-light text-decoration-none">Ballina</a></p>
+          <p><a href="rethnesh.html" class="text-light text-decoration-none">Rreth Nesh</a></p>
+          <p><a href="makinat.html" class="text-light text-decoration-none">Makinat</a></p>
+          <p><a href="contact.html" class="text-light text-decoration-none">Kontakt</a></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 mb-4">
+          <h6 class="text-uppercase fw-bold">Kontakt</h6>
+          <p><i class="bi bi-house-door-fill me-2"></i> Prizren, Kosovë</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> info@autobesa.com</p>
+          <p><i class="bi bi-phone-fill me-2"></i> +383 44 123 456</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-3 mb-4">
+          <h6 class="text-uppercase fw-bold">Na Ndiqni</h6>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="bi bi-youtube"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-secondary">
+      © 2025 AutoBesa. Të gjitha të drejtat e rezervuara.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Js -->
+     <script src="makinat.js"></script>
+      <!-- aos javascirpt-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.1/aos.js"></script>
+  <script>
+    AOS.init({
+      easing: 'ease-in-out',
+      once: true // only animate once, not every scroll
+    });
+  </script>
+  <script src="navbar-sync.js"></script>
+  <script src="favorites.js"></script>
+
+</body>

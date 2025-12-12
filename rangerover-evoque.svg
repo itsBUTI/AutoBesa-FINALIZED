@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="rv1" x1="0" x2="1">
+      <stop offset="0" stop-color="#08121a"/>
+      <stop offset="1" stop-color="#0b3b2e"/>
+    </linearGradient>
+    <linearGradient id="rv2" x1="0" x2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#rv1)" />
+
+  <!-- ground strip -->
+  <rect x="0" y="560" width="1200" height="180" fill="#071018" />
+  <rect x="0" y="618" width="1200" height="6" fill="#0b1220" />
+
+  <!-- stylized SUV silhouette -->
+  <g transform="translate(80,200) scale(0.95)">
+    <path d="M60 220 C120 140, 260 110, 420 110 C640 110, 840 160, 960 220 L960 270 C920 260, 740 230, 540 230 C300 230, 140 260, 60 270 Z" fill="#071826" opacity="0.95" />
+    <rect x="200" y="140" width="560" height="60" rx="28" fill="url(#rv2)" opacity="0.12" />
+    <ellipse cx="300" cy="280" rx="64" ry="36" fill="#0b1220" />
+    <ellipse cx="720" cy="280" rx="64" ry="36" fill="#0b1220" />
+    <circle cx="300" cy="280" r="18" fill="#cbd5e1" />
+    <circle cx="720" cy="280" r="18" fill="#cbd5e1" />
+    <!-- roof windows -->
+    <path d="M260 120 C350 90, 650 90, 780 120 L800 140 C660 120, 420 120, 260 140 Z" fill="#f97316" opacity="0.10" />
+  </g>
+
+  <!-- model name -->
+  <text x="50%" y="740" text-anchor="middle" fill="#e6eef6" font-family="Arial, Helvetica, sans-serif" font-size="36">Range Rover Evoque</text>
+</svg>
